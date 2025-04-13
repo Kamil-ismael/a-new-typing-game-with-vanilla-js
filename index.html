@@ -48,9 +48,78 @@
             </div>
         </section>
 
-        <p id="word-display"></p>
-        <input type="text" id="input-field" autofocus>
-        <p id="results">Results : </p>
+        <section class="game-container">
+            <div class="stats-panel">
+                <div class="stat">
+                    <div id="wpm" class="stat-value">0</div>
+                    <div class="stat-label">WPM</div>
+                </div>
+                <div class="stat">
+                    <div id="accuracy" class="stat-value">100%</div>
+                    <div class="stat-label">Précision</div>
+                </div>
+                <div class="stat">
+                    <div id="timer" class="stat-value">0s</div>
+                    <div class="stat-label">Temps</div>
+                </div>
+            </div>
+
+            <div class="typing-area">
+                <div id="word-display" class="text-display"></div>
+                <div class="input-container">
+                    <input type="text" id="input-field" class="typing-input" placeholder="Commencez à taper ici..." autofocus>
+                </div>
+                <div id="results" class="results"></div>
+            </div>
+
+            <div class="controls">
+                <button id="restart-btn" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 2v6h6"></path>
+                        <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
+                    </svg>
+                    Recommencer
+                </button>
+            </div>
+
+            <div class="keyboard-visual">
+                <div class="row">
+                    <div class="key" data-key="q">Q</div>
+                    <div class="key" data-key="w">W</div>
+                    <div class="key" data-key="e">E</div>
+                    <div class="key" data-key="r">R</div>
+                    <div class="key" data-key="t">T</div>
+                    <div class="key" data-key="y">Y</div>
+                    <div class="key" data-key="u">U</div>
+                    <div class="key" data-key="i">I</div>
+                    <div class="key" data-key="o">O</div>
+                    <div class="key" data-key="p">P</div>
+                </div>
+                <div class="row">
+                    <div class="key" data-key="a">A</div>
+                    <div class="key" data-key="s">S</div>
+                    <div class="key" data-key="d">D</div>
+                    <div class="key" data-key="f">F</div>
+                    <div class="key" data-key="g">G</div>
+                    <div class="key" data-key="h">H</div>
+                    <div class="key" data-key="j">J</div>
+                    <div class="key" data-key="k">K</div>
+                    <div class="key" data-key="l">L</div>
+                </div>
+                <div class="row">
+                    <div class="key" data-key="z">Z</div>
+                    <div class="key" data-key="x">X</div>
+                    <div class="key" data-key="c">C</div>
+                    <div class="key" data-key="v">V</div>
+                    <div class="key" data-key="b">B</div>
+                    <div class="key" data-key="n">N</div>
+                    <div class="key" data-key="m">M</div>
+                </div>
+                <div class="row">
+                    <div class="key spacebar" data-key=" ">Espace</div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
