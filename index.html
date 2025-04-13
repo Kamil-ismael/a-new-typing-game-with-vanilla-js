@@ -4,21 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Typing Test</title>
 </head>
 
 <body>
+    <div class="background-glow"></div>
+    <div class="floating-letters" id="floatingLetters"></div>
+
     <header>
-        <h1>Typing Test</h1>
-        <label for="mode">Select Mode:</label>
-        <select id="mode">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
+        <div class="logo">
+            <div class="logo-icon">⌨</div>
+            <div class="logo-text">Speed<span>Type</span></div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Accueil</a></li>
+                <li><a href="#">Exercices</a></li>
+                <li><a href="#">Classement</a></li>
+                <li><a href="#">Statistiques</a></li>
+            </ul>
+        </nav>
+
+        <div class="mode-selector">
+            <label for="mode">Difficulté:</label>
+            <select id="mode">
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+        </div>
     </header>
 
     <main>
+        <section class="hero">
+            <h1>Devenez un <span>expert</span> de la dactylographie</h1>
+            <p>Améliorez votre vitesse et votre précision grâce à des exercices interactifs, des défis quotidiens et un suivi personnalisé de vos performances.</p>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary">Commencer à taper</button>
+                <button class="btn btn-outline">Découvrir les exercices</button>
+            </div>
+        </section>
+
         <p id="word-display"></p>
         <input type="text" id="input-field" autofocus>
         <p id="results">Results : </p>
