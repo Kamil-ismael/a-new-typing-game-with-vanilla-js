@@ -397,3 +397,29 @@ main {
 .spacebar {
     width: 12rem;
 }
+/* Animations keyframes */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+}
+@keyframes pulse {
+    0% { opacity: 0.8; box-shadow: 0 0 10px var(--accent-primary); }
+    50% { opacity: 1; box-shadow: 0 0 20px var(--accent-primary); }
+    100% { opacity: 0.8; box-shadow: 0 0 10px var(--accent-primary); }
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

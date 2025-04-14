@@ -104,3 +104,20 @@ modeSelect.addEventListener("change", () => startTest());
 
 // Start the test
 startTest();
+
+// Animation lettre
+const floatingLetters = document.getElementById('floatingLetters')
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+for (let i=0; i <50; i++){
+    const letter = document.createElement('div');
+    letter.classList.add('floating-letter');
+    letter.textContent = letters[Math.floor(Math.random() * letters.length)];
+    letter.style.left = `${Math.random() * 100}%`;
+    letter.style.top = `${Math.random() * 100}%`;
+    letter.style.animationDelay = `${Math.random() * 10}s`;
+    letter.style.animationDuration = `${10 + Math.random() * 20}s`;
+    letter.style.opacity = Math.random() * 0.2;
+    letter.style.fontSize = `${1 + Math.random() * 2}rem`;
+    floatingLetters.appendChild(letter);
+}
