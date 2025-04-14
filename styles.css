@@ -51,7 +51,7 @@ body {
 .floating-letter {
     position: absolute;
     font-size: 2rem;
-    color: #4e85fd;
+    color:var(--accent-primary);
     animation: float 10s linear infinite;
 }
 /* Header styles */
@@ -218,6 +218,12 @@ main {
     gap: 0.5rem;
     border: none;
 };
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
@@ -229,12 +235,6 @@ main {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(78, 133, 253, 0.5);
 };
-.action-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
 .btn-outline {
     background: transparent;
     color: var(--text-primary);
@@ -267,4 +267,43 @@ main {
     height: 3px;
     background: linear-gradient(90deg, var(--accent-tertiary), var(--accent-primary), var(--accent-secondary));
     z-index: 1;
+}
+.stats-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(25, 34, 53, 0.8);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(78, 133, 253, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 32%;
+}
+.stat-value{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px rgba(78, 133, 253, 0.3);
+}
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.typing-area {
+    width: 100%;
+    background: rgba(15, 23, 37, 0.7);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(78, 133, 253, 0.1);
 }
