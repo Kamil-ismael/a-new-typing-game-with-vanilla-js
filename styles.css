@@ -47,7 +47,6 @@ body {
     pointer-events: none;
     z-index: -1;
 }
-
 .floating-letter {
     position: absolute;
     font-size: 2rem;
@@ -176,7 +175,7 @@ main {
     padding: 2rem 1rem;
     position: relative;
     z-index: 1;
-};
+}
 .hero {
     text-align: center;
     margin-bottom: 3rem;
@@ -205,7 +204,7 @@ main {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-};
+}
 .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -217,7 +216,7 @@ main {
     align-items: center;
     gap: 0.5rem;
     border: none;
-};
+}
 .action-buttons {
     display: flex;
     gap: 1.5rem;
@@ -229,12 +228,12 @@ main {
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     color: var(--text-primary);
     box-shadow: 0 5px 15px rgba(78, 133, 253, 0.3);
-};
+}
 
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(78, 133, 253, 0.5);
-};
+}
 .btn-outline {
     background: transparent;
     color: var(--text-primary);
@@ -244,7 +243,7 @@ main {
 .btn-outline:hover {
     background: rgba(78, 133, 253, 0.1);
     border-color:#4e85fd;
-};
+}
 .game-container {
     width: 100%;
     max-width: 1000px;
@@ -257,7 +256,7 @@ main {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(78, 133, 253, 0.1);
     margin-bottom: 2rem;
     position: relative;
-};
+}
 .game-container::before {
     content: '';
     position: absolute;
@@ -306,4 +305,95 @@ main {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(78, 133, 253, 0.1);
+}
+.text-display {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    min-height: 100px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+.text-display span {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+.text-display span[style*="color: red"] {
+    color: var(--accent-primary) !important;
+    background-color: rgba(78, 133, 253, 0.1);
+    border-radius: 4px;
+    padding: 0 2px;
+    box-shadow: 0 0 5px rgba(78, 133, 253, 0.2);
+}
+.text-display span[style*="color: black"] {
+    color: var(--text-primary) !important;
+}
+.input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.typing-input{
+    width: 100%;
+    background:rgba(15, 23, 37, 0.9);
+    border: 2px solid rgba(78, 133, 253, 0.3);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.typing-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(78, 133, 253, 0.2);
+}
+.results {
+    color: var(--accent-secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    min-height: 1.5rem;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+/* keyboard visual */
+.keyboard-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+.row {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.key {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 34, 53, 0.8);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(160, 180, 208, 0.1);
+}
+.key.active {
+    background:#3a86ff;
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    box-shadow: 0 0 10px rgba(78, 133, 253, 0.3);
+    transform: translateY(-2px);
+}
+.spacebar {
+    width: 12rem;
 }
