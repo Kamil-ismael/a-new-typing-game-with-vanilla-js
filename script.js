@@ -55,8 +55,9 @@ const startTimer = () => {
 
 // Calculate and return WPM & accuracy
 const getCurrentStats = () => {
-    if (!startTime || inputField.value.length === 0) {
-        return { wpm: "0.00", accuracy: "0.00" };
+        if (!startTime || inputField.value.length === 0) {
+           return { wpm: "0.00", accuracy: "0.00" };
+        }
     }
 
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds

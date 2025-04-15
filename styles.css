@@ -423,3 +423,112 @@ main {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* Light Mode */
+body.light-mode {
+    --background-dark: #f5f8ff;
+    --background-light: #ffffff;
+    --text-primary: #2a3952;
+    --text-secondary: #5d6b85;
+    --accent-primary: #3a75e0;
+    --accent-secondary: #1bb8d6;
+    --accent-tertiary: #5439e8;
+    --success: #27d982;
+    --error: #e0365e;
+    --neutral: #eaeff7;
+}
+body.light-mode {
+    background: linear-gradient(135deg, var(--background-dark) 0%, #e8e9f7 50%, var(--background-dark) 100%);
+}
+body.light-mode .background-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(78, 133, 253, 0.1) 0%, transparent 70%);
+}
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(78, 133, 253, 0.2);
+}
+body.light-mode .game-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(78, 133, 253, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 30px rgba(78, 133, 253, 0.1);
+}
+body.light-mode .stat {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(78, 133, 253, 0.2);
+}
+body.light-mode .typing-area {
+    background: rgba(239, 243, 255, 0.9);
+    border: 1px solid rgba(78, 133, 253, 0.2);
+}
+body.light-mode .typing-input {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(78, 133, 253, 0.3);
+}
+body.light-mode .key {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(78, 133, 253, 0.2);
+}
+body.light-mode .mode-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--neutral);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+body.light-mode .mode-selector label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+body.light-mode .mode-selector select {
+    background: white;
+    border: 1px solid rgba(78, 133, 253, 0.3);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+body.light-mode .mode-selector select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(78, 133, 253, 0.2);
+}
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+    background: rgba(78, 133, 253, 0.1);
+}
+body .fa-sun {
+    display: none;
+}
+  
+body .fa-moon {
+    display: block;
+}
+  
+body.light-mode .fa-sun {
+    display: block;
+}
+  
+body.light-mode .fa-moon {
+    display: none;
+}
+
+  
+  
+  
