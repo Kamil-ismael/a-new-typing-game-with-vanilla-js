@@ -78,19 +78,29 @@ const getCurrentStats = () => {
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
     if (event.key === " ") { // Check if spacebar is pressed
-        if (inputField.value.trim() === wordsToType[currentWordIndex]) {
-            if (!previousEndTime) previousEndTime = startTime;
+        event.preventDefault(); // Prevent adding extra spaces
 
+            if (!previousEndTime) previousEndTime = startTime;
             const { wpm, accuracy } = getCurrentStats();
+            
             results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+            document.getElementById("accuracy").textContent = `${accuracy}%`;
+            document.getElementById("wpm").textContent = wpm;
 
             currentWordIndex++;
+            
+            if (currentWordIndex >= wordsToType.length) {
+                // Fin du test
+                inputField.disabled = true;
+                results.innerHTML = `<div class="final-results">Test terminé !</div>`;
+            } else {
             previousEndTime = Date.now();
             highlightNextWord();
 
             inputField.value = ""; // Clear input field after space
             event.preventDefault(); // Prevent adding extra spaces
-        }
+
+            }
     }
 };
 
