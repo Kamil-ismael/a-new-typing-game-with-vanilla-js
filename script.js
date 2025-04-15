@@ -19,7 +19,6 @@ const words = {
     medium: ["keyboard", "monitor", "printer", "charger", "battery"],
     hard: ["synchronize", "complicated", "development", "extravagant", "misconception"]
 };
-
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
     const wordList = words[mode];
