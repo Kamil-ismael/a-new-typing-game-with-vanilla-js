@@ -58,10 +58,17 @@ const startTimer = () => {
 const getCurrentStats = () => {
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
     const wpm = Math.round((wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60) * 100) /100; // 5 chars = 1 word
+    
+    let chars = 0;
+    for (let i = 0; i < Math.min(inputField.value.length, wordsToType[currentWordIndex]); i++){
+        if (inputField.value[i] ==wordsToType[currentWordIndex] [i]) chars++;
+    }
     const accuracy = Math.round((wordsToType[currentWordIndex].length / Math.max(inputField.value.length, 1)) * 10000) / 100;
 
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
+
+
 
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
