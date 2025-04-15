@@ -55,33 +55,48 @@ const startTimer = () => {
 
 // Calculate and return WPM & accuracy
 const getCurrentStats = () => {
+    if (!startTime || inputField.value.length === 0) {
+        return { wpm: "0.00", accuracy: "0.00" };
+    }
+
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
-    const wpm = Math.round((wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60) * 100) /100; // 5 chars = 1 word
+
+    const wpm = ((inputField.value.length / 5) / (elapsedTime / 60)); // 5 chars = 1 word
     
     let chars = 0;
-    for (let i = 0; i < Math.min(inputField.value.length, wordsToType[currentWordIndex]); i++){
+    for (let i = 0; i < Math.min(inputField.value.length, wordsToType[currentWordIndex].length); i++){
         if (inputField.value[i] ==wordsToType[currentWordIndex] [i]) chars++;
-    }
-    const accuracy = Math.round((wordsToType[currentWordIndex].length / Math.max(inputField.value.length, 1)) * 10000) / 100;
+
+    const accuracy =  (chars / wordsToType[currentWordIndex].length) * 100;
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
 
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
     if (event.key === " ") { // Check if spacebar is pressed
-        if (inputField.value.trim() === wordsToType[currentWordIndex]) {
-            if (!previousEndTime) previousEndTime = startTime;
+        event.preventDefault(); // Prevent adding extra spaces
 
+            if (!previousEndTime) previousEndTime = startTime;
             const { wpm, accuracy } = getCurrentStats();
+            
             results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+            document.getElementById("accuracy").textContent = `${accuracy}%`;
+            document.getElementById("wpm").textContent = wpm;
 
             currentWordIndex++;
+            
+            if (currentWordIndex >= wordsToType.length) {
+                // Fin du test
+                inputField.disabled = true;
+                results.innerHTML = `<div class="final-results">Test terminé !</div>`;
+            } else {
             previousEndTime = Date.now();
             highlightNextWord();
 
             inputField.value = ""; // Clear input field after space
             event.preventDefault(); // Prevent adding extra spaces
-        }
+
+            }
     }
 };
 
@@ -123,4 +138,4 @@ for (let i=0; i <50; i++){
     letter.style.opacity = Math.random() * 0.2;
     letter.style.fontSize = `${1 + Math.random() * 2}rem`;
     floatingLetters.appendChild(letter);
-}
+};
