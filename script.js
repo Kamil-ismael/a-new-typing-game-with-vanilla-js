@@ -58,16 +58,17 @@ const getCurrentStats = () => {
         if (!startTime || inputField.value.length === 0) {
            return { wpm: "0.00", accuracy: "0.00" };
         }
-    }
+    
 
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
-
     const wpm = ((inputField.value.length / 5) / (elapsedTime / 60)); // 5 chars = 1 word
     
     let chars = 0;
     for (let i = 0; i < Math.min(inputField.value.length, wordsToType[currentWordIndex].length); i++){
-        if (inputField.value[i] ==wordsToType[currentWordIndex] [i]) chars++;
-
+        if (inputField.value[i] ==wordsToType[currentWordIndex] [i]){
+            chars++;
+        } 
+    }
     const accuracy =  (chars / wordsToType[currentWordIndex].length) * 100;
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
@@ -140,3 +141,17 @@ for (let i=0; i <50; i++){
     letter.style.fontSize = `${1 + Math.random() * 2}rem`;
     floatingLetters.appendChild(letter);
 };
+// Fonctionnalité de changement de thème
+document.addEventListener('DOMContentLoaded', () => {
+    startTest();
+    const themeToggle = document.querySelector('.theme button');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light'){
+        document.body.classList.add('ligth-mode')
+    }
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme)
+    });
+});
