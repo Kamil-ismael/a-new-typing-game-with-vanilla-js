@@ -1,14 +1,14 @@
 :root {
-    --background-dark: #0f1725;
-    --background-light: #192235;
-    --text-primary: #ffffff;
-    --text-secondary: #a0b4d0;
-    --accent-primary: #4e85fd;
-    --accent-secondary: #30c9e8;
-    --accent-tertiary: #5d3dfd;
-    --success: #3dfd9a;
-    --error: #fd3d6b;
-    --neutral: #2e3746;
+    --background-color: #050a12;
+    --bg-secondary: #0a0f16;
+    --text-primary: #e0e0e0;
+    --text-secondary:  #8a9bab;
+    --accent-primary: #ff1a75;
+    --accent-secondary:#00eeff;
+    --accent-tertiary: #3d5afe;
+    --glow-primary: 0 0 10px #ff1a75, 0 0 20px rgba(255, 26, 117, 0.5);
+    --glow-secondary: 0 0 10px #00eeff, 0 0 20px rgba(0, 238, 255, 0.5);
+    --font-tech: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
 }
 
 * {
