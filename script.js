@@ -224,10 +224,26 @@ for (let i=0; i <50; i++){
     letter.style.fontSize = `${1 + Math.random() * 2}rem`;
     floatingLetters.appendChild(letter);
 };
+//Scanline Animation
+const scanline = document.createElement('div');
+scanline.classList.add('scan-line');
+document.body.appendChild(scanline);
+// Animation Keyboard
+document.addEventListener('keydown', (event) => {
+    const key = event.key.toLowerCase();
+    const keyElement = document.querySelector(`.key[data-key="${key}"]`);
+    if (keyElement) {
+      keyElement.classList.add('active');
+      setTimeout(() => {
+        keyElement.classList.remove('active');
+      }, 200);
+    }
+});
+
 // Fonctionnalité de changement de thème
 document.addEventListener('DOMContentLoaded', () => {
     startTest();
-    const themeToggle = document.querySelector('.theme button');
+    const themeToggle = document.querySelector('.theme-toggle');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light'){
         document.body.classList.add('ligth-mode')
@@ -237,4 +253,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme)
     });
+    // Glitch Animation
+    setInterval(() => {
+        const glitchElements = document.querySelectorAll('.logo-text, .hero h1');
+        const randomElement = glitchElements[Math.floor(Math.random() * glitchElements.length)];
+        
+        randomElement.classList.add('glitch');
+        setTimeout(() => {
+            randomElement.classList.remove('glitch');
+        }, 150);
+    }, 2000);
 });
