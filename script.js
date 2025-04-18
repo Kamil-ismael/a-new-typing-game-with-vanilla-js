@@ -46,6 +46,10 @@ const startTest = (wordCount = 50) => {
 
     inputField.value = "";
     results.textContent = "";
+
+    document.getElementById("accuracy").textContent = "0%";
+    document.getElementById("wpm").textContent = "0";
+
 };
 
 // Start the timer when user begins typing
@@ -60,7 +64,7 @@ const getCurrentStats = () => {
         }
     
 
-    const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
+    const elapsedTime = (Date.now() - startTime) / 1000; // Seconds
     const wpm = ((inputField.value.length / 5) / (elapsedTime / 60)); // 5 chars = 1 word
     
     let chars = 0;
