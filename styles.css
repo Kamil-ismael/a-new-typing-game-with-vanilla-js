@@ -117,36 +117,54 @@ header {
     padding: 1.5rem 2.5rem;
     background: rgba(25, 34, 53, 0.7);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(78, 133, 253, 0.2);
+    border-bottom: 1px solid rgba(255, 26, 117, 0.3);
     position: relative;
     z-index: 10;
 }
-
+header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--accent-primary) var(--aaccent-secondary),transparent);
+}
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-
+.logo-text {
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--aaccent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textPulse 2s infinite ease-in-out;
+    position: relative;
+}
+.logo-text span {
+    background: linear-gradient(135deg, var(--accent-primary) 30%, var(--accent-secondary)) 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logo-text::after{
+    content: '_';
+    position: absolute;
+    right: -15px;
+    animation: blink 1s infinite;
+    color: var(--accent-primary);
+}
 .logo-icon {
     font-size: 2.5rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulse 2s infinite ease-in-out;
-}
-
-.logo-text {
-    letter-spacing: 1px;
-}
-
-.logo-text span {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 nav ul {
@@ -158,11 +176,13 @@ nav ul {
 nav a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
     transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
@@ -172,10 +192,10 @@ nav a:hover {
 nav a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     transition: width 0.3s ease;
 }
@@ -190,22 +210,39 @@ nav a.active {
 
 nav a.active::after {
     width: 100%;
+    height: 2px;
+    box-shadow: var(--glow-secondary);
 }
 .mode-selector {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(15, 23, 37, 0.5);
-    border-radius: 8px;
+    background: rgba(10, 15, 22, 0.5);
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    border-radius: 0;
+    position: relative;
     padding: 0.75rem 1rem;
 }
-
-.mode-selector label {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
+.mode-selector::before,
+.mode-selector::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--accent-secondary);
 }
-
+.mode-selector::before {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+.mode-selector::after{
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
+}
 .mode-selector select {
     background: rgba(25, 34, 53, 0.7);
     border: 1px solid rgba(78, 133, 253, 0.3);
