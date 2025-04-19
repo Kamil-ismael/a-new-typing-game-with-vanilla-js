@@ -271,10 +271,6 @@ for (let i=0; i <50; i++){
     letter.style.fontSize = `${1 + Math.random() * 2}rem`;
     floatingLetters.appendChild(letter);
 };
-//Scanline Animation
-const scanline = document.createElement('div');
-scanline.classList.add('scan-line');
-document.body.appendChild(scanline);
 // Animation Keyboard
 document.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase();
