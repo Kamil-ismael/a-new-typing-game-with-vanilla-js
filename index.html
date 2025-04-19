@@ -55,11 +55,11 @@
     <main>
         <section class="hero">
             <h1>Become a <span>Typing</span> expert </h1>
-            <p>Améliorez votre vitesse et votre précision grâce à des exercices interactifs, des défis quotidiens et un suivi personnalisé de vos performances.</p>
+            <p>Upgrade your speed and your accuracy in this typing game. Do you want to be the best typist? You are in the right place</p>
             
             <div class="action-buttons">
-                <button class="btn btn-primary">Commencer à taper</button>
-              
+                <button id="start-btn" class="btn btn-primary">Start to type</button>
+                <button id="discover" class="btn btn-outline">Contact us</button>
             </div>
         </section>
 
@@ -71,18 +71,18 @@
                 </div>
                 <div class="stat">
                     <div id="accuracy" class="stat-value">100%</div>
-                    <div class="stat-label">Précision</div>
+                    <div class="stat-label">Accuracy</div>
                 </div>
                 <div class="stat">
                     <div id="timer" class="stat-value">0s</div>
-                    <div class="stat-label">Temps</div>
+                    <div class="stat-label">Time</div>
                 </div>
             </div>
 
             <div class="typing-area">
                 <div id="word-display" class="text-display"></div>
                 <div class="input-container">
-                    <input type="text" id="input-field" class="typing-input" placeholder="Commencez à taper ici..." autofocus>
+                    <input type="text" id="input-field" class="typing-input" placeholder="Type here to begin..." autofocus>
                 </div>
                 <div id="results" class="results"></div>
             </div>
@@ -132,7 +132,7 @@
                         <path d="M3 2v6h6"></path>
                         <path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path>
                     </svg>
-                    Recommencer
+                    Restart
                 </button>
             </div>
         </section>
