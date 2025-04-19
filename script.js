@@ -54,6 +54,7 @@ const startTest = (wordCount = 50) => {
 
     wordsToType.forEach((word, index) => {
         const span = document.createElement("span");
+        span.innerHTML = `<span style="color: ${index === 0 ? 'red' : 'var(--text-secondary)'}>${word}</span> `;
         span.textContent = word + " ";
         span.className = "word";
         if (index === 0) {
@@ -220,13 +221,38 @@ const highlightNextWord = () => {
     }
 };
 
+const highlightErrors = () => {
+    const currentWord = wordsToType[currentWordIndex];
+    const inputValue = inputField.value;
+    const wordElements = wordDisplay.children[currentWordIndex];
+    
+    let highlightedContent = '';
+    for (let i = 0; i < currentWord.length; i++) {
+        if (i < inputValue.length) {
+            if (inputValue[i] === currentWord[i]) {
+                highlightedContent += `<span style="color: var(--text-primary);">${currentWord[i]}</span>`;
+            } else {
+                highlightedContent += `<span style="color: var(--accent-primary); text-decoration: underline;">${currentWord[i]}</span>`;
+            }
+        } else {
+            highlightedContent += `<span style="color: var(--text-secondary);">${currentWord[i]}</span>`;
+        }
+    }
+    wordElements.innerHTML = highlightedContent + ' ';
+};
+
 // Event listeners
-// Attach `updateWord` to `keydown` instead of `input`
 inputField.addEventListener("keydown", (event) => {
     startTimer();
     updateWord(event);
 });
 modeSelect.addEventListener("change", () => startTest());
+
+inputField.addEventListener("input", () => {
+    if (startTime) {
+        highlightErrors();
+    }
+});
 
 // Start the test
 startTest();
