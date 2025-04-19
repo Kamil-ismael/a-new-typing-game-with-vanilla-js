@@ -762,7 +762,21 @@ body.light-mode header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 123, 255, 0.2);
 }
-
+body.light-mode .theme-menu {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+  
+body.light-mode .theme-menu::before {
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 123, 255, 0.2);
+    border-left: 1px solid rgba(0, 123, 255, 0.2);
+}
+  
+body.light-mode .theme-option:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
 body.light-mode .profile-card {
     background: rgba(245, 247, 250, 0.9);
     border: 1px solid rgba(0, 123, 255, 0.2);
