@@ -457,7 +457,8 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
 }
 
 .profile-card {
