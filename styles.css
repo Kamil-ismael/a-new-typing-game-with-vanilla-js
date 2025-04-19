@@ -757,6 +757,20 @@ main {
 .spacebar {
     width: 12rem;
 }
+
+.text-display span.error {
+    color: var(--accent-primary) !important;
+    text-decoration: underline wavy;
+    position: relative;
+}
+
+.text-display span.correct {
+    color: var(--text-primary) !important;
+}
+
+.text-display span.pending {
+    color: var(--text-secondary) !important;
+}
 /* Animations keyframes */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px);}
