@@ -267,7 +267,7 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.game-container').style.display = 'none';
     startTest();
-    document.querySelectorAll('.theme-option').forEach(option => {
+     document.querySelectorAll('.theme-option').forEach(option => {
         option.addEventListener('click', () => {
             const theme = option.getAttribute('data-theme');
             document.body.classList.remove('light-mode')
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light'){
-        document.body.classList.add('ligth-mode')
+        document.body.classList.add('light-mode')
     }
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
