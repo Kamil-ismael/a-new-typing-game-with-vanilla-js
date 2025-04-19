@@ -969,17 +969,7 @@ body.light-mode .key.active {
     color: var(--accent-secondary);
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
-  
-body.light-mode footer {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(0, 123, 255, 0.2);
-}
-  
-body.light-mode .footer-link:hover {
-    color: var(--accent-primary);
-}
-  
+
 body.light-mode .theme-menu {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(0, 123, 255, 0.2);
