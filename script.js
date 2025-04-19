@@ -88,6 +88,15 @@ document.getElementById('start-btn').addEventListener('click', () => {
     inputField.focus();
 });
 
+// Button START THE GAME
+document.getElementById('start-game-link').addEventListener('click', (e) => {
+    e.preventDefault(); 
+    document.querySelector('.hero').style.display = 'none';
+    document.querySelector('.game-container').style.display = 'block';
+    startTest();
+    inputField.focus();
+});
+
 // Button to restart
 document.getElementById('restart-btn').addEventListener('click', () => {
     startTest(); // Réinitialise complètement le test
@@ -299,4 +308,20 @@ document.addEventListener('DOMContentLoaded', () => {
             randomElement.classList.remove('glitch');
         }, 150);
     }, 2000);
+});
+
+//Return to the home section
+document.getElementById('home-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.hero').style.display = 'block';
+    document.querySelector('.game-container').style.display = 'none';
+});
+
+//Same effect as the buttom "START TO TYPE"
+document.getElementById('start-game-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.hero').style.display = 'none';
+    document.querySelector('.game-container').style.display = 'block';
+    startTest();
+    inputField.focus();
 });
