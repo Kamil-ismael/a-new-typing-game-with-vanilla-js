@@ -267,6 +267,18 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.game-container').style.display = 'none';
     startTest();
+    document.querySelectorAll('.theme-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const theme = option.getAttribute('data-theme');
+            document.body.classList.remove('light-mode')
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else if (theme === 'dark' || theme === 'default') {
+                localStorage.setItem('theme', theme);
+            }
+        });
+    });
     const themeToggle = document.querySelector('.theme-toggle');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light'){
