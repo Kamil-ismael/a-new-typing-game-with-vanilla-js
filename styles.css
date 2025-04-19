@@ -69,11 +69,6 @@ body {
     z-index: 0;
 
 }
-
-.glitch {
-    animation: glitch 0.15s linear;
-  }
-
 /* Cyberpunk Decorations */
 .corner-decoration {
     position: fixed;
@@ -94,6 +89,12 @@ body {
     border-top: 2px solid var(--accent-secondary);
     border-right: 2px solid var(--accent-secondary);
 }
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid var(--accent-secondary);
+    border-left: 2px solid var(--accent-secondary);
+}
 .bottom-right{
     bottom: 0;
     right: 0;
@@ -106,8 +107,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent 50% rgba(0, 238, 255, 0.03 ) 50%);
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 238, 255, 0.03 ) 50%);
     background-size: 100% 4px;
     z-index: 100;
     pointer-events: none;
@@ -120,7 +121,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2.5rem;
-    background: rgba(25, 34, 53, 0.7);
+    background: rgba(5, 10, 18, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 26, 117, 0.3);
     position: relative;
@@ -133,7 +134,7 @@ header::before {
     left: 0;
     height: 1px;
     width: 100%;
-    background: linear-gradient(90deg, transparent, var(--accent-primary) var(--aaccent-secondary),transparent);
+    background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary),transparent);
 }
 .logo {
     display: flex;
@@ -146,7 +147,7 @@ header::before {
     letter-spacing: 1px;
 }
 .logo-text {
-    background: linear-gradient(135deg, var(--text-primary) 30%, var(--aaccent-secondary) 100%);
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textPulse 3s infinite ease-in-out;
@@ -302,7 +303,7 @@ main {
     position: absolute;
     bottom: 0;
     left: 0;
-    color: var(--aaccent-secondary);
+    color: var(--accent-secondary);
     opacity: 0.5;
     font-size: 0.8rem;
 }
@@ -452,7 +453,7 @@ main {
 }
 .stats-panel {
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     width: 100%;
     margin-bottom: 1rem;
     gap: 1rem;
@@ -466,7 +467,7 @@ main {
     padding: 0.78rem;
     border: 1px solid rgba(78, 133, 253, 0.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 32%;
+    width: 25%;
     position: relative;
 }
 
@@ -560,6 +561,7 @@ main {
 }
 .input-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 3rem;
 }
@@ -638,6 +640,9 @@ main {
     color: var(--accent-secondary);
     box-shadow: 0 0 10px rgba(78, 133, 253, 0.3);
 }
+.key.active::before {
+    opacity: 1;
+}
 .spacebar {
     width: 12rem;
 }
@@ -664,9 +669,9 @@ main {
     100% { text-shadow: 0 0 5px rgba(0, 238, 255, 0.3); }
 }
 @keyframes pulse {
-    0% { opacity: 0.6;}
-    50% { opacity: 1; }
-    100% { opacity: 0.6;}
+    0% { opacity: 0.6; transform: scale(0.98);}
+    50% { opacity: 1;transform: scale(1.02); }
+    100% { opacity: 0.6; transform: scale(0.98);}
 }
 @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -674,7 +679,7 @@ main {
 }
 @keyframes scanline{
     0% {transform: translateY(-100%);}
-    100%{transform: translateY(-100%);}
+    100%{transform: translateY(100%);}
 }
 @keyframes glitch {
     0% {
@@ -702,94 +707,61 @@ main {
       text-shadow: 0 0 0 transparent;
     }
 }
+.glitch {
+    animation: glitch 0.15s linear;
+  }
 /* Light Mode */
 body.light-mode {
-    --background-dark: #f5f8ff;
-    --background-light: #ffffff;
-    --text-primary: #2a3952;
-    --text-secondary: #5d6b85;
-    --accent-primary: #3a75e0;
-    --accent-secondary: #1bb8d6;
-    --accent-tertiary: #5439e8;
-    --success: #27d982;
-    --error: #e0365e;
-    --neutral: #eaeff7;
-}
-body.light-mode {
-    background: linear-gradient(135deg, var(--background-dark) 0%, #e8e9f7 50%, var(--background-dark) 100%);
+  --bg-color: #0e1018;
+  --bg-secondary: #161b26;
+  --text-primary: #ffffff;
+  --text-secondary: #a0caff;
+  --accent-primary: #ff5cb9;
+  --accent-secondary: #5ce1ff;
+  --accent-tertiary: #7162ff;
+  --success: #5cffb0;
+  --error: #ff5c7a;
+  --neutral: #202436;
 }
 body.light-mode .background-glow {
-    background: radial-gradient(circle at 50% 50%, rgba(78, 133, 253, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(92, 225, 255, 0.15) 0%, transparent 70%);
 }
-body.light-mode header {
-    background: rgba(255, 255, 255, 0.85);
-    border-bottom: 1px solid rgba(78, 133, 253, 0.2);
-}
-body.light-mode .game-container {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(78, 133, 253, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 30px rgba(78, 133, 253, 0.1);
-}
-body.light-mode .stat {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(78, 133, 253, 0.2);
-}
-body.light-mode .typing-area {
-    background: rgba(239, 243, 255, 0.9);
-    border: 1px solid rgba(78, 133, 253, 0.2);
-}
-body.light-mode .typing-input {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(78, 133, 253, 0.3);
-}
-body.light-mode .key {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(78, 133, 253, 0.2);
-}
-body.light-mode .mode-selector {
+.theme {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    background: var(--neutral);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-body.light-mode .mode-selector label {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-body.light-mode .mode-selector select {
-    background: white;
-    border: 1px solid rgba(78, 133, 253, 0.3);
-    border-radius: 6px;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-body.light-mode .mode-selector select:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 2px rgba(78, 133, 253, 0.2);
 }
 .theme-toggle {
+    position: relative;
     background: transparent;
-    border: none;
-    color: var(--text-primary);
+    color: var(--text-secondary);
+    border: 1px solid var(--accent-primary);
     cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0.5rem;
-    border-radius: 50%;
     transition: all 0.3s ease;
 }
+
+.theme-toggle::before,
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--accent-primary);
+}
+
+.theme-toggle::before {
+  top: -3px;
+  left: -3px;
+}
+
+.theme-toggle::after {
+  bottom: -3px;
+  right: -3px;
+}
+
 .theme-toggle:hover {
-    background: rgba(78, 133, 253, 0.1);
+  background: rgba(255, 26, 117, 0.1);
+  box-shadow: var(--glow-primary);
 }
 body .fa-sun {
     display: none;
