@@ -840,6 +840,21 @@ main {
 .glitch {
     animation: glitch 0.15s linear;
   }
+
+@keyframes scroll-profiles {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-200%);
+    }
+    75% {
+        transform: translateY(-300%);
+    }
+}
 /* Light Mode */
 body.light-mode {
     --background-color: #fff;
@@ -1008,6 +1023,43 @@ body.light-mode .fa-sun {
 body.light-mode .fa-moon {
     display: none;
 }
+
+/* COntact */
+.contact-container {
+    position: relative;
+    display: inline-block;
+}
+
+.social-profiles {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-secondary);
+    border: 1px solid var(--accent-primary);
+    padding: 0.5rem;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    width: max-content;
+    text-align: center;
+}
+
+.social-profiles a {
+    display: block;
+    color: var(--accent-secondary);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    font-family: var(--font-tech);
+    overflow: hidden;
+}
+
+.contact-container:hover .social-profiles {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Responsive Design */
 @media (max-width: 992px){
     .stats-panel{
