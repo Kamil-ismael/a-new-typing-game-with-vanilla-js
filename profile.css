@@ -29,8 +29,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-
-/* Éléments décoratifs */
 .background-glow {
     position: fixed;
     top: 0;
@@ -134,9 +132,9 @@ header {
     border-bottom: 1px solid rgba(255, 26, 117, 0.3);
     position: relative;
     z-index: 10;
-  }
+}
   
-  header::before {
+header::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -150,16 +148,8 @@ header {
       var(--accent-secondary),
       transparent
     );
-  }
-  /* .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }  */
-  .logo {
+}
+.logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -168,47 +158,47 @@ header {
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
+}
   
-  .logo-text {
+.logo-text {
     background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textPulse 3s infinite ease-in-out;
     position: relative;
-  }
+}
   
-  .logo-text span {
+.logo-text span {
     background: linear-gradient(135deg, var(--accent-primary) 30%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
+}
   
-  .logo-text::after {
+.logo-text::after {
     content: '_';
     position: absolute;
     right: -15px;
     animation: blink 1s infinite;
     color: var(--accent-primary);
-  }
+}
   
-  .logo-icon {
+.logo-icon {
     font-size: 2.5rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulse 2s infinite ease-in-out;
-  }
-  nav ul {
+}
+nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style: none;
     gap: 2.5rem;
-  }
+}
   
-  nav a {
+nav a {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 1rem;
@@ -218,13 +208,13 @@ header {
     transition: color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
+}
   
-  nav a:hover {
+nav a:hover {
     color: var(--text-primary);
-  }
+}
   
-  nav a::after {
+nav a::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -233,22 +223,58 @@ header {
     height: 1px;
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     transition: width 0.3s ease;
-  }
+}
   
-  nav a:hover::after {
+nav a:hover::after {
     width: 100%;
-  }
+}
   
-  nav a.active {
+nav a.active {
     color: var(--text-primary);
-  }
+}
   
-  nav a.active::after {
+nav a.active::after {
     width: 100%;
     height: 2px;
     box-shadow: var(--glow-secondary);
-  }
+}
+.theme {
+    display: flex;
+    align-items: center;
+}
+.theme-toggle {
+    position: relative;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--accent-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
 
+.theme-toggle::before,
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--accent-primary);
+}
+
+.theme-toggle::before {
+  top: -3px;
+  left: -3px;
+}
+
+.theme-toggle::after {
+  bottom: -3px;
+  right: -3px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 26, 117, 0.1);
+  box-shadow: var(--glow-primary);
+}
 .theme-dropdown {
     position: relative;
 }
@@ -318,7 +344,59 @@ header {
     background: #ffffff;
     border: 1px solid var(--accent-primary);
 }
+.mode-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(10, 15, 22, 0.5);
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    border-radius: 0;
+    position: relative;
+    padding: 0.75rem 1rem;
+}
+.mode-selector::before,
+.mode-selector::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--accent-secondary);
+}
+.mode-selector::before {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+.mode-selector::after{
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
+}
+.mode-selector label {
+    color: var(--accent-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.mode-selector select {
+    background: rgba(5, 10, 18, 0.7);
+    border: 1px solid rgba(0, 238, 255, 0.3);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-tech);
+}
 
+.mode-selector select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(0, 238, 255, 0.2);
+}
 /* Main Content - Profile Styles */
 main {
     flex: 1;

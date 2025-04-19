@@ -160,11 +160,9 @@ const getCurrentStats = () => {
 const endTest = () => {
     const elapsedTime = (Date.now() - startTime) / 1000;
     finalTime = formatTime(elapsedTime);
-    
     inputField.disabled = true;
-    results.innerHTML = `<div class="final-results">Test terminé !</div>`;
+    results.innerHTML = `<div class="final-results">Test completed !</div>`;
     document.getElementById("timer").textContent = finalTime;
-    
     clearInterval(timerInterval);
 };
 
@@ -289,7 +287,7 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Fonctionnalité de changement de thème
+// theme loading features
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.game-container').style.display = 'none';
     startTest();
