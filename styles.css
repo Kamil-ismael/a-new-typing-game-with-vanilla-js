@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 :root {
     --background-color: #050a12;
     --bg-secondary: #0a0f16;
@@ -10,7 +12,6 @@
     --glow-secondary: 0 0 10px #00eeff, 0 0 20px rgba(0, 238, 255, 0.5);
     --font-tech: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -172,7 +173,13 @@ header::before {
     -webkit-text-fill-color: transparent;
     animation: pulse 2s infinite ease-in-out;
 }
-
+.logo1{
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 nav ul {
     display: flex;
     list-style: none;

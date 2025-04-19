@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 :root {
     --background-color: #050a12;
     --bg-secondary: #0a0f16;
@@ -10,7 +12,7 @@
     --glow-secondary: 0 0 10px #00eeff, 0 0 20px rgba(0, 238, 255, 0.5);
     --font-tech: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -149,56 +151,64 @@ header {
       transparent
     );
   }
-.logo {
+  /* .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }  */
+  .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 1px;
-}
+  }
   
-.logo-text {
+  .logo-text {
     background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textPulse 3s infinite ease-in-out;
     position: relative;
-}
+  }
   
-.logo-text span {
+  .logo-text span {
     background: linear-gradient(135deg, var(--accent-primary) 30%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+  }
   
-.logo-text::after {
+  .logo-text::after {
     content: '_';
     position: absolute;
     right: -15px;
     animation: blink 1s infinite;
     color: var(--accent-primary);
-}
+  }
   
-.logo-icon {
+  .logo-icon {
     font-size: 2.5rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulse 2s infinite ease-in-out;
-}
-nav ul {
+  }
+  nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style: none;
     gap: 2.5rem;
-}
+  }
   
-nav a {
+  nav a {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 1rem;
@@ -208,13 +218,13 @@ nav a {
     transition: color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
+  }
   
-nav a:hover {
+  nav a:hover {
     color: var(--text-primary);
-}
+  }
   
-nav a::after {
+  nav a::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -223,21 +233,21 @@ nav a::after {
     height: 1px;
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     transition: width 0.3s ease;
-}
+  }
   
-nav a:hover::after {
+  nav a:hover::after {
     width: 100%;
-}
+  }
   
-nav a.active {
+  nav a.active {
     color: var(--text-primary);
-}
+  }
   
-nav a.active::after {
+  nav a.active::after {
     width: 100%;
     height: 2px;
     box-shadow: var(--glow-secondary);
-}
+  }
 
 .theme-dropdown {
     position: relative;
@@ -309,7 +319,7 @@ nav a.active::after {
     border: 1px solid var(--accent-primary);
 }
 
-/* Main Content for Profile Styles */
+/* Main Content - Profile Styles */
 main {
     flex: 1;
     display: flex;
@@ -574,4 +584,151 @@ main {
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--glow-primary);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.2;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes textPulse {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(0, 238, 255, 0.5), 0 0 20px rgba(0, 238, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(0, 238, 255, 0.3);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Light Mode */
+body.light-mode {
+    --background-color: #fff;
+    --bg-secondary: #fff;
+    --text-primary: #1c2836;
+    --text-secondary: #3a4a5c;
+    --accent-primary: #ff1a75;
+    --accent-secondary: #007bff;
+    --accent-tertiary: #5e50ff;
+    --glow-primary: 0 0 10px rgba(255, 26, 117, 0.4), 0 0 20px rgba(255, 26, 117, 0.2);
+    --glow-secondary: 0 0 10px rgba(0, 123, 255, 0.4), 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+body.light-mode .background-glow {
+    background: radial-gradient(circle at 50% 20%, rgba(0, 123, 255, 0.05) 0%, transparent 70%);
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+body.light-mode .profile-card {
+    background: rgba(245, 247, 250, 0.9);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .profile-avatar {
+    background: white;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .profile-card {
+        min-width: 100%;
+    }
 }

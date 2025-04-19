@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Profil - TypeTest</title>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+    <div class="floating-letters" id="floatingLetters"></div>
+    <div class="cyber-glitch"></div>
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+    <div class="scan-line"></div>
+
+    <header id="Home">
+        <div class="logo">
+            <div class="logo-text">Type<span>Test</span>_</div>
+            <div class="logo-icon"><i class="fa-solid fa-keyboard"></i></div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">PROFILE</a></li>
+                <li class="theme-dropdown">
+                    <a href="#" class="theme-toggle">Theme <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="theme-menu">
+                        <div class="theme-option" data-theme="dark">
+                            <span class="theme-color dark"></span>
+                            <span>Dark Mode</span>
+                        </div>
+                        <div class="theme-option" data-theme="light">
+                            <span class="theme-color light"></span>
+                            <span>Light Mode</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mode-selector">
+            <label for="mode">MODE:</label>
+            <select id="mode">
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section class="profile-container">
+            <h1 class="profile-title">Notre <span>Équipe</span>_</h1>
+            
+            <div class="profile-cards">
+                <div class="profile-card">
+                    <div class="card-glow"></div>
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">ISMAEL</h2>
+                        <div class="profile-role">Développeur Frontend</div>
+                        <div class="profile-tag">120 <span>WPM</span></div>
+                        <p class="profile-bio">Passionate about interface design l'UX. I like futuristic design</p>
+                        <div class="profile-socials">
+                            <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="card-glow"></div>
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">YOHAN</h2>
+                        <div class="profile-role">Designer Back end</div>
+                        <div class="profile-tag">110 <span>WPM</span></div>
+                        <p class="profile-bio">Expert en design cyberpunk et interfaces futuristes. Je transforme les concepts en expériences visuelles captivantes.</p>
+                        <div class="profile-socials">
+                            <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-container">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    back to palay
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="proil.js"></script>
+</body>
+
+</html>
