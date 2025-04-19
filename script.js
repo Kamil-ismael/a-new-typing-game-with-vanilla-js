@@ -63,13 +63,36 @@ const startTest = (wordCount = 50) => {
         wordDisplay.appendChild(span);
     });
 
+    
     inputField.value = "";
     results.textContent = "";
     inputField.disabled = false;
     document.getElementById("accuracy").textContent = "0%";
     document.getElementById("wpm").textContent = "0";
     document.getElementById("timer").textContent = "0s";
+
+    console.log("Mots générés :", wordsToType); 
+if(wordsToType.length === 0) {
+    console.error("Aucun mot généré ! Mode sélectionné :", modeSelect.value);
+}
 };
+
+// Type to begin
+document.getElementById('start-btn').addEventListener('click', () => {
+    // Hiding the head(section 'hero') and showing the game
+    document.querySelector('.hero').style.display = 'none';
+    document.querySelector('.game-container').style.display = 'block';
+    
+    // Beginning
+    startTest();
+    inputField.focus();
+});
+
+// Button to restart
+document.getElementById('restart-btn').addEventListener('click', () => {
+    startTest(); // Réinitialise complètement le test
+    inputField.focus();
+});
 
 // Start the timer when user begins typing
 const startTimer = () => {
@@ -226,7 +249,7 @@ for (let i=0; i <50; i++){
 };
 // Fonctionnalité de changement de thème
 document.addEventListener('DOMContentLoaded', () => {
-    startTest();
+    document.querySelector('.game-container').style.display = 'none';
     const themeToggle = document.querySelector('.theme button');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light'){
