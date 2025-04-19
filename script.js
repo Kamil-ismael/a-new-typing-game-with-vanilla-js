@@ -311,17 +311,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //Return to the home section
-document.getElementById('home-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.hero').style.display = 'block';
-    document.querySelector('.game-container').style.display = 'none';
-});
+// document.getElementById('home-link').addEventListener('click', (e) => {
+//     e.preventDefault();
+//     document.querySelector('.hero').style.display = 'block';
+//     document.querySelector('.game-container').style.display = 'none';
+// });
 
-//Same effect as the buttom "START TO TYPE"
-document.getElementById('start-game-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.hero').style.display = 'none';
-    document.querySelector('.game-container').style.display = 'block';
-    startTest();
-    inputField.focus();
-});
+// //Same effect as the buttom "START TO TYPE"
+// document.getElementById('start-game-link').addEventListener('click', (e) => {
+//     e.preventDefault();
+//     document.querySelector('.hero').style.display = 'none';
+//     document.querySelector('.game-container').style.display = 'block';
+//     startTest();
+//     inputField.focus();
+// });
